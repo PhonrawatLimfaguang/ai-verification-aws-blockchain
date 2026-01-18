@@ -1,0 +1,10 @@
+{
+  "modality": "TEXT",
+  "fileHash": "2f776f8ab1e0e6c0f7c8f3b2a9d3b1a5c3d7e8f90123456789abcdef01234567",
+  "isAI": true,
+  "confidence": 87,
+  "modelId": "roberta-ai-detector",
+  "modelVersion": "1.0.0",
+  "features": { "perplexity": 22.1, "ai_probability": 0.87 },
+  "createdAt": 1730530000
+}

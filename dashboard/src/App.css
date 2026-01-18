@@ -1,0 +1,210 @@
+/* ===============================
+   🎓 AUTHCHAIN — SWU GRADIENT THEME
+   (Red • Charcoal • White)
+   =============================== */
+:root{
+  /* SWU core */
+  --swu-red: #dd1f28;
+  --swu-red-dark: #b3151d;
+  --charcoal: #333333;
+  --ink: #111418;
+  --paper: #ffffff;
+  --paper-soft: #f5f6f7;
+
+  /* gradients */
+  --grad: linear-gradient(135deg, var(--swu-red), #f03a43);
+  --grad-dark: linear-gradient(135deg, var(--swu-red-dark), var(--charcoal));
+  --halo: linear-gradient(135deg, rgba(221,31,40,.10), rgba(17,20,24,.06));
+
+  /* UI */
+  --bg: #f7f8fa;          /* พื้นหลังสว่าง */
+  --panel: rgba(255,255,255,.92);
+  --panel-border: rgba(0,0,0,.10);
+  --text: #12161c;        /* เทาเข้มอ่านง่าย */
+  --muted: #5b6066;
+
+  /* chart */
+  --chart-ai: var(--swu-red);
+  --chart-human: var(--charcoal);
+}
+
+body{
+  margin:0;
+  color: var(--text);
+  background:
+    radial-gradient(900px 420px at 15% -10%, rgba(221,31,40,.08), transparent 60%),
+    radial-gradient(900px 420px at 95% 30%, rgba(17,20,24,.05), transparent 60%),
+    var(--bg);
+  font-family: "IBM Plex Sans Thai", ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.container{ max-width:1150px; margin:0 auto; padding:30px 24px 80px; }
+
+/* Header */
+.header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:26px; }
+.brand-badge{
+  background: var(--grad);
+  color:#fff; padding:10px 16px; font-weight:800; border-radius:14px; letter-spacing:.25px;
+  border: 1px solid rgba(255,255,255,.28);
+  box-shadow: 0 10px 26px rgba(221,31,40,.22);
+}
+.header h1{ margin:0 0 0 12px; font-family:"Sora", "IBM Plex Sans Thai", sans-serif; font-size:26px; letter-spacing:.2px; }
+
+.net{
+  font-size:12px; background: var(--halo); color: var(--muted);
+  padding:8px 12px; border-radius:10px; border:1px solid var(--panel-border);
+  backdrop-filter: blur(6px);
+}
+
+/* Cards */
+.card{
+  background: var(--panel); border:1px solid var(--panel-border);
+  border-radius:16px; padding:18px; backdrop-filter: blur(10px);
+  box-shadow: 0 10px 28px rgba(17,20,24,.06);
+}
+.card h2{ margin:0 0 12px; background: var(--grad-dark); -webkit-background-clip:text; color:transparent; }
+
+/* Inputs */
+.input, .textarea{
+  width:100%; padding:12px; border-radius:12px; border:1px solid var(--panel-border);
+  background: var(--paper); color: var(--text);
+}
+.input::placeholder, .textarea::placeholder{ color:#8a9096; }
+.input:focus, .textarea:focus{
+  outline:none; border-color: var(--swu-red);
+  box-shadow: 0 0 0 4px rgba(221,31,40,.12);
+}
+
+/* Buttons */
+.btn{
+  border:none; padding:10px 18px; font-weight:700; border-radius:12px; cursor:pointer;
+  background: var(--grad); color:#fff; transition: .2s ease;
+  box-shadow: 0 10px 24px rgba(221,31,40,.22);
+}
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.04); }
+.btn.secondary{
+  background: linear-gradient(135deg, var(--paper), var(--paper-soft));
+  color: var(--ink); border:1px solid var(--panel-border);
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
+}
+
+.row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+.result{ background:var(--paper); border:1px solid var(--panel-border); border-radius:14px; padding:14px; }
+
+/* KPI */
+.kpis{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
+.kpi{ background:var(--paper); border:1px solid var(--panel-border); border-radius:12px; padding:14px; }
+.kpi .label{ font-size:12px; color: var(--muted); }
+.kpi .val{ font-size:24px; font-weight:800; }
+
+/* Table */
+.section{ margin-top: 40px; }
+.table{ width:100%; border-collapse:collapse; background:var(--paper); margin-top:16px; border-radius:12px; overflow:hidden; }
+.table th{ background: linear-gradient(180deg, #f2f3f5, #ffffff); color:#2b3035; padding:10px; text-align:left; }
+.table td{ padding:10px; border-top:1px solid #e7e9ec; }
+
+/* Badges */
+.badge{ padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid #e7e9ec; }
+.badge.ai{ background:#ffe7e9; color:#7a0b11; border-color:rgba(221,31,40,.3); }
+.badge.human{ background:#eeeeee; color:#222; border-color:rgba(0,0,0,.18); }
+.badge.tag{ background:#f2f3f5; color:#5a5f66; border-color:#e7e9ec; }
+
+/* Chart card */
+.chart-box{
+  position:relative; background:var(--paper); border:1px solid var(--panel-border);
+  border-radius:16px; padding:18px; margin-top:26px; box-shadow: 0 8px 22px rgba(0,0,0,.05);
+}
+.chart-box::before{ content:""; position:absolute; inset:0; background: var(--halo); pointer-events:none; border-radius:16px; }
+.chart-title{ margin:0 0 10px; background: var(--grad-dark); -webkit-background-clip:text; color:transparent; }
+
+/* Utility */
+.link{ color:#9b0f16; text-decoration:none; }
+.link:hover{ text-decoration:underline; }
+.copy{ padding:6px 10px; background:var(--paper); border:1px solid var(--panel-border); border-radius:8px; cursor:pointer; }
+
+body{ font-family: "IBM Plex Sans Thai", sans-serif; }
+h1, h2, .brand-badge{ font-family: "Sora", sans-serif; }
+
+/* ---------- ฟอนต์ระบบ ---------- */
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "IBM Plex Sans Thai", "Sarabun", system-ui, -apple-system, "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* หัวข้อ: ใช้ Sarabun (รองรับไทย) + ไล่สีที่ตัวอักษร */
+.header h1,
+.card h2,
+.chart-title {
+  font-family: "Sarabun", "IBM Plex Sans Thai", sans-serif;
+  font-weight: 700;
+  background: var(--grad-dark);
+  -webkit-background-clip: text;
+  background-clip: text; 
+  color: transparent;     /* ทำให้เห็นเป็นตัวอักษรไล่สี */
+}
+
+/* โลโก้/แบรนด์ ใช้ Sora (อังกฤษ) + เงานุ่ม */
+.brand-badge{
+  font-family: "Sora", sans-serif;
+  font-weight: 800;
+  background: var(--grad);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow: 0 12px 28px rgba(221,31,40,.22);
+}
+
+/* ---------- การ์ดไล่สีจริง (ขอบไล่สี + เนื้อในขาว) ---------- */
+.card{
+  position: relative;
+  border-radius: 16px;
+  padding: 18px;
+  background:
+    linear-gradient(#fff, #fff) padding-box,  /* เนื้อใน */
+    var(--grad) border-box;                   /* ขอบไล่สี */
+  border: 2px solid transparent;
+  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+}
+
+/* ---------- อินพุต/เท็กซ์แอเรียไล่สีจริง ---------- */
+.input, .textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,  /* พื้นขาวอ่านง่าย */
+    var(--grad) border-box;                         /* ขอบไล่สี */
+  border:2px solid transparent;
+  color: var(--text);
+}
+.input::placeholder, .textarea::placeholder{ color:#8a9096; }
+.input:focus, .textarea:focus{
+  outline:none;
+  box-shadow: 0 0 0 4px rgba(221,31,40,.12);
+}
+
+/* ปุ่มคงเป็นไล่สีเดิม */
+.btn{
+  background: var(--grad);
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  font-weight:700;
+  box-shadow: 0 10px 24px rgba(221,31,40,.22);
+  transition:.2s ease;
+}
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.04); }
+.btn.secondary{
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    var(--grad-dark) border-box;               /* ขอบเทา-ดำไล่สี */
+  border:2px solid transparent;
+  color: var(--ink);
+}
+
+/* ช่องค้นหา fileHash ให้ใช้ .input (ไม่ใช้ inline style แล้ว) */
+

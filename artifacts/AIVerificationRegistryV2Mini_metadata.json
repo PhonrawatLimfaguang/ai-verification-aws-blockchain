@@ -1,0 +1,362 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "key",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "verifier",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "modality",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isAI",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "confidence",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "reportURI",
+						"type": "string"
+					}
+				],
+				"name": "Attested",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "verifier",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "allowed",
+						"type": "bool"
+					}
+				],
+				"name": "VerifierUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "fileHash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "idx",
+						"type": "uint256"
+					}
+				],
+				"name": "getAttestationByIndex",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "verifier",
+								"type": "address"
+							},
+							{
+								"internalType": "enum AIVerificationRegistryV2Mini.Modality",
+								"name": "modality",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "isAI",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "confidence",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "fileHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "modelId",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "modelVersion",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "reportURI",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct AIVerificationRegistryV2Mini.Attestation",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "fileHash",
+						"type": "string"
+					}
+				],
+				"name": "getAttestationCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "fileHash",
+						"type": "string"
+					}
+				],
+				"name": "getAttestations",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "verifier",
+								"type": "address"
+							},
+							{
+								"internalType": "enum AIVerificationRegistryV2Mini.Modality",
+								"name": "modality",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "isAI",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "confidence",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "fileHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "modelId",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "modelVersion",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "reportURI",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct AIVerificationRegistryV2Mini.Attestation[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isVerifier",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "acc",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "allowed",
+						"type": "bool"
+					}
+				],
+				"name": "setVerifier",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "fileHash",
+						"type": "string"
+					},
+					{
+						"internalType": "enum AIVerificationRegistryV2Mini.Modality",
+						"name": "modality",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAI",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "confidence",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "modelId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "modelVersion",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "reportURI",
+						"type": "string"
+					}
+				],
+				"name": "submitAttestation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"AIVerificationRegistryV2.sol": "AIVerificationRegistryV2Mini"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"AIVerificationRegistryV2.sol": {
+			"keccak256": "0xec80dcb5850c5f586b6977f136b8c29a9c19d23e17efe57311f5c19b68c1255c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70fbbd4eeb96334f13c8002cf3698034fee8b4c59f6e04412500b57a05c46dae",
+				"dweb:/ipfs/QmYSLeoWtLGJd81iQpvjFRYVDqGcqgSetGZedMrz52kW3H"
+			]
+		}
+	},
+	"version": 1
+}
